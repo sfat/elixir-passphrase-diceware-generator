@@ -1,6 +1,6 @@
-defmodule ElixirPassphraseDicewareGenerator.WordRepository do
+defmodule Library.WordRepository do
   use GenServer
-  alias ElixirPassphraseDicewareGenerator.FileLoader
+  alias Library.FileLoader
   @moduledoc """
   Module responsible for retrieval of words used by the diceware generator
   """

@@ -1,5 +1,5 @@
-defmodule ElixirPassphraseDicewareGenerator.WordGenerator do
-  alias ElixirPassphraseDicewareGenerator.WordRepository
+defmodule Library.WordGenerator do
+  alias Library.WordRepository
 
   @moduledoc """
   Module will generate 5 digits (simulating the dice roll) and form a number (i.e. 12345)

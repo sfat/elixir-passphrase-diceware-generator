@@ -1,4 +1,4 @@
-defmodule ElixirPassphraseDicewareGenerator.FileLoader do
+defmodule Library.FileLoader do
   @moduledoc """
   Module responsible for retrieval of words used by the diceware generator
   """

@@ -1,12 +1,12 @@
-defmodule ElixirPassphraseDicewareGenerator.PassphraseGeneratorTest do
+defmodule Library.PassphraseGeneratorTest do
   use ExUnit.Case
   require Logger
 
-  alias ElixirPassphraseDicewareGenerator.PassphraseGenerator
+  alias Library.PassphraseGenerator
 
   @moduletag :capture_log
 
-  doctest ElixirPassphraseDicewareGenerator.PassphraseGeneratorTest
+  doctest Library.PassphraseGenerator
 
   test "generates a passphrase" do
     passphrase = PassphraseGenerator.generate_passphrase()

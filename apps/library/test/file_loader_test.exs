@@ -1,12 +1,12 @@
-defmodule ElixirPassphraseDicewareGenerator.FileLoaderTest do
+defmodule Library.FileLoaderTest do
   use ExUnit.Case
   require Logger
 
-  alias ElixirPassphraseDicewareGenerator.FileLoader
+  alias Library.FileLoader
 
   @moduletag :capture_log
 
-  doctest ElixirPassphraseDicewareGenerator.FileLoader
+  doctest Library.FileLoader
 
   test "loads words in memory" do
     words = FileLoader.load_words()

@@ -1,4 +1,4 @@
-defmodule ElixirPassphraseDicewareGenerator.Application do
+defmodule Library.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -7,13 +7,13 @@ defmodule ElixirPassphraseDicewareGenerator.Application do
 
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: ElixirPassphraseDicewareGenerator.Worker.start_link(arg)
-       {ElixirPassphraseDicewareGenerator.WordRepository, %{}}
+      # Starts a worker by calling: Library.Worker.start_link(arg)
+       {Library.WordRepository, %{}}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: ElixirPassphraseDicewareGenerator.Supervisor]
+    opts = [strategy: :one_for_one, name: Library.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end

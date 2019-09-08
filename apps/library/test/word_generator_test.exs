@@ -1,12 +1,12 @@
-defmodule ElixirPassphraseDicewareGenerator.WordGeneratorTest do
+defmodule Library.WordGeneratorTest do
   use ExUnit.Case
   require Logger
 
-  alias ElixirPassphraseDicewareGenerator.WordGenerator
+  alias Library.WordGenerator
 
   @moduletag :capture_log
 
-  doctest ElixirPassphraseDicewareGenerator.WordGenerator
+  doctest Library.WordGenerator
 
   test "generates a number" do
     generated_number = WordGenerator.generate_number()
