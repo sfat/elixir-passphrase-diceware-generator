@@ -3,7 +3,6 @@ defmodule ElixirPassphraseDicewareGenerator.WordGeneratorTest do
   require Logger
 
   alias ElixirPassphraseDicewareGenerator.WordGenerator
-  alias ElixirPassphraseDicewareGenerator.WordRepository
 
   @moduletag :capture_log
 
@@ -15,8 +14,7 @@ defmodule ElixirPassphraseDicewareGenerator.WordGeneratorTest do
   end
 
   test "gets a new word" do
-    {:ok, number, word} = WordGenerator.generate()
+    word = WordGenerator.generate()
     assert word != ""
-    assert word == WordRepository.get_word_by_number(number)
   end
 end
