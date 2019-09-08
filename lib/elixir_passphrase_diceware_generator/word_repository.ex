@@ -1,16 +1,39 @@
 defmodule WordRepository do
+  use GenServer
+  require FileLoader
   @moduledoc """
-  Module responsible for storing and retrieval of words used by the diceware generator
+  Module responsible for retrieval of words used by the diceware generator
   """
 
+  ## GenServer API
   @doc """
-  Load words from file
+  GenServer.init/1 callback
   """
-  def load_words do
-    File.stream!("priv/eff_large_wordlist.txt")
-    |> Stream.map(&String.trim(&1))
-    |> Stream.map(&String.split(&1, "\t"))
-    |> Stream.map(fn [a, b] -> %{String.to_atom(a) => b} end)
-    |> Enum.to_list
+  def init(state) do
+    {:ok, state}
   end
+
+  def handle_call(:get_words, _from, state) do
+    {:reply, state, state}
+  end
+
+  def handle_call({:get_word, number}, _from, state) do
+    word = state
+    |> Enum.filter(fn %{number: n, word: _} -> n == number end)
+    |> Enum.take(1)
+    {:reply, word, state}
+  end
+
+  ## Client API / Helper functions
+  @doc """
+  Start the word repository and link it.
+  This is a helper function
+  """
+  def start_link() do
+    GenServer.start_link(__MODULE__, FileLoader.load_words(), name: __MODULE__)
+  end
+
+  def get_words, do: GenServer.call(__MODULE__, :get_words)
+
+  def get_word_by_number(number), do: GenServer.call(__MODULE__, {:get_word, number})
 end

@@ -9,14 +9,14 @@ defmodule WordRepositoryTest do
   doctest WordRepository
 
   test "loads words in memory" do
-     words = WordRepository.load_words()
-     assert words != []
+    WordRepository.start_link()
+    assert WordRepository.get_words() != []
   end
 
   test "get first word" do
-    word = WordRepository.load_words()
-    |> Enum.take(1)
-
-    assert word == [%{:"11111" => "abacus"}]
+    WordRepository.start_link()
+    number = 11111
+    word = WordRepository.get_word_by_number(number)
+    assert word == [%{number: number, word: "abacus"}]
   end
 end
