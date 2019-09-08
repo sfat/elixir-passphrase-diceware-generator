@@ -8,7 +8,7 @@ defmodule ElixirPassphraseDicewareGenerator.Application do
   def start(_type, _args) do
     children = [
       # Starts a worker by calling: ElixirPassphraseDicewareGenerator.Worker.start_link(arg)
-      # {ElixirPassphraseDicewareGenerator.Worker, arg}
+       {ElixirPassphraseDicewareGenerator.WordRepository, %{}}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

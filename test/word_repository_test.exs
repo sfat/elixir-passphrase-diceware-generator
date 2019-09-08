@@ -1,12 +1,12 @@
-defmodule WordRepositoryTest do
+defmodule ElixirPassphraseDicewareGenerator.WordRepositoryTest do
   use ExUnit.Case
   require Logger
 
-  alias WordRepository
+  alias ElixirPassphraseDicewareGenerator.WordRepository
 
   @moduletag :capture_log
 
-  doctest WordRepository
+  doctest ElixirPassphraseDicewareGenerator.WordRepository
 
   test "loads words in memory" do
     WordRepository.start_link()

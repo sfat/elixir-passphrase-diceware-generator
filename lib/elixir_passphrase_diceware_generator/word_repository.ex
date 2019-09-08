@@ -1,6 +1,6 @@
-defmodule WordRepository do
+defmodule ElixirPassphraseDicewareGenerator.WordRepository do
   use GenServer
-  require FileLoader
+  alias ElixirPassphraseDicewareGenerator.FileLoader
   @moduledoc """
   Module responsible for retrieval of words used by the diceware generator
   """
@@ -29,7 +29,7 @@ defmodule WordRepository do
   Start the word repository and link it.
   This is a helper function
   """
-  def start_link() do
+  def start_link(_state \\ %{}) do
     GenServer.start_link(__MODULE__, FileLoader.load_words(), name: __MODULE__)
   end
 
