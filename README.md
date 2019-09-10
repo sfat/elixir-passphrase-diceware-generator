@@ -23,7 +23,7 @@ directly from the command line.
 
 You can find more info regarding the CLI [here](apps/cli/README.md)
 
-##3. API
+## 3. API
 
 Component will create a REST API that will expose and let you generate a passphrase from your favorite
 REST client (a GUI or programmatically)
