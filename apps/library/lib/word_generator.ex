@@ -13,8 +13,9 @@ defmodule Library.WordGenerator do
   end
 
   def generate_number do
-    << a :: 32, b :: 32, c :: 32 >> = :crypto.strong_rand_bytes(12)
-    :random.seed(a,b,c) # don't use the default seed to increase randomness
-    Enum.reduce(1..5, 0, fn (_, sum) -> :random.uniform(6) + sum * 10 end)
+    <<a::32, b::32, c::32>> = :crypto.strong_rand_bytes(12)
+    # don't use the default seed to increase randomness
+    :random.seed(a, b, c)
+    Enum.reduce(1..5, 0, fn _, sum -> :random.uniform(6) + sum * 10 end)
   end
 end

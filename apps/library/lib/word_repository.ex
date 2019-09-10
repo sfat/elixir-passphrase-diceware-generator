@@ -1,6 +1,7 @@
 defmodule Library.WordRepository do
   use GenServer
   alias Library.FileLoader
+
   @moduledoc """
   Module responsible for retrieval of words used by the diceware generator
   """
@@ -18,9 +19,11 @@ defmodule Library.WordRepository do
   end
 
   def handle_call({:get_word, number}, _from, state) do
-    word = state
-    |> Enum.filter(fn %{number: n, word: _} -> n == number end)
-    |> Enum.take(1)
+    word =
+      state
+      |> Enum.filter(fn %{number: n, word: _} -> n == number end)
+      |> Enum.take(1)
+
     {:reply, word, state}
   end
 

@@ -1,8 +1,4 @@
-defmodule CliTest do
+defmodule CLITest do
   use ExUnit.Case
-  doctest Cli
-
-  test "greets the world" do
-    assert Cli.hello() == :world
-  end
+  doctest CLI
 end
