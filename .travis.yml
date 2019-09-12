@@ -1,0 +1,20 @@
+language: elixir
+elixir:
+  - 1.9.1
+
+before_script:
+  - MIX_ENV=test mix compile --warnings-as-errors, coveralls.json
+script:
+  - MIX_ENV=test mix test
+  - cd apps/cli
+  - MIX_ENV=test mix escript.build
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email: false
+
+branches:
+  only:
+    - master
