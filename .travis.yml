@@ -6,7 +6,7 @@ env:
   - MIX_ENV=test
 
 script:
-  - mix do deps.get, compile, test --warnings-as-errors, coveralls.json
+  - mix do deps.get compile --warnings-as-errors test coveralls.json
   - cd apps/cli
   - mix escript.build
 
