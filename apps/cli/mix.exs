@@ -3,7 +3,7 @@ defmodule CLI.MixProject do
 
   def project do
     [
-      app: :"passphrase-generator",
+      app: :cli,
       version: "0.1.0",
       build_path: "../../_build",
       config_path: "../../config/config.exs",
@@ -32,6 +32,6 @@ defmodule CLI.MixProject do
   end
 
   defp escript do
-    [main_module: CLI]
+    [main_module: CLI, name: "passphrase-generator"]
   end
 end
