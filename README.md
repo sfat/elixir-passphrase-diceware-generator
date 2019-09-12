@@ -1,4 +1,6 @@
-# Elixir Passphrase Diceware Generator
+# Elixir Passphrase Diceware Generator 
+
+[![Build Status](https://travis-ci.com/sfat/elixir-passphrase-diceware-generator.svg?branch=master)](https://travis-ci.com/sfat/elixir-passphrase-diceware-generator)
 
 Passphrase generator based on [Diceware](http://world.std.com/~reinhold/diceware.html) technique
 
