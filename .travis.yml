@@ -8,7 +8,7 @@ env:
 script:
   - mix do deps.get, compile, test --warnings-as-errors, coveralls.json
   - cd apps/cli
-  - test mix escript.build
+  - mix escript.build
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)

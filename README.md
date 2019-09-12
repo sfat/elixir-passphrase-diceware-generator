@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.com/sfat/elixir-passphrase-diceware-generator.svg?branch=master)](https://travis-ci.com/sfat/elixir-passphrase-diceware-generator)
 
+[![codecov](https://codecov.io/gh/sfat/elixir-passphrase-diceware-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/sfat/elixir-passphrase-diceware-generator)
+
 Passphrase generator based on [Diceware](http://world.std.com/~reinhold/diceware.html) technique
 
 This project is split into 3 parts (apps):
