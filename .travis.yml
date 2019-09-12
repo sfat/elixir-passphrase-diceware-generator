@@ -2,12 +2,13 @@ language: elixir
 elixir:
   - 1.9.1
 
-before_script:
-  - MIX_ENV=test mix compile --warnings-as-errors, coveralls.json
+env:
+  - MIX_ENV=test
+
 script:
-  - MIX_ENV=test mix test
+  - mix do deps.get, compile, test --warnings-as-errors, coveralls.json
   - cd apps/cli
-  - MIX_ENV=test mix escript.build
+  - test mix escript.build
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
