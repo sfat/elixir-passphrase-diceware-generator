@@ -19,3 +19,12 @@ import Config
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+# Configure your database
+config :api, Api.Repo,
+       username: "postgres",
+       password: "postgres",
+       database: "api_dev",
+       hostname: "localhost",
+       show_sensitive_data_on_connection_error: true,
+       pool_size: 10
