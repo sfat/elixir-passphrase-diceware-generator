@@ -27,7 +27,7 @@ defmodule CLI.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:library, in_umbrella: true}
+      {:passphrase_generator, in_umbrella: true}
     ]
   end
 
