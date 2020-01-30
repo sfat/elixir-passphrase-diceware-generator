@@ -16,7 +16,7 @@ defmodule Library.MixProject do
       package: package(),
       deps: deps(),
       name: "Passphrase Generator",
-      source_url: "https://github.com/sfat/elixir-passphrase-diceware-generator"
+      source_url: "https://github.com/sfat/elixir-passphrase-diceware-generator/tree/master/apps/passphrase_generator"
     ]
   end
 

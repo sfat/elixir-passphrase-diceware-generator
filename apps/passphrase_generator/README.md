@@ -1,21 +1,16 @@
-# Library
+# Passphrase Generator
 
-**TODO: Add description**
+This the core of the passphrase generator. 
 
-## Installation
+Based on the `apps/library/priv/eff_large_wordlist.txt`, where we have the map of numbers and words,
+we will simulate the dice generation before choosing a word.
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `library` to your list of dependencies in `mix.exs`:
+The library can be included as a dependency in your own Elixir project.
 
 ```elixir
 def deps do
   [
-    {:library, "~> 0.1.0"}
+    {:passphrase_generator, "~> 0.1.0"}
   ]
 end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/library](https://hexdocs.pm/library).
-
